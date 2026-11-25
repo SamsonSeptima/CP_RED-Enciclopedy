@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07080c">
+  <title>DATA POOL // RED — энциклопедия Cyberpunk RED</title>
+  <meta name="description" content="Русская энциклопедия Cyberpunk RED: быстрые таблицы, оружие и модификации, рипердок, генераторы работ, встреч и халтурок.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/fonts.css?v=1.4.2">
+  <link rel="stylesheet" href="assets/css/app.css?v=1.4.2">
+</head>
+<body>
+  <div class="app" id="app">
+    <div class="bg-fx" aria-hidden="true">
+      <div class="bg-grid"></div>
+      <div class="bg-glow bg-glow--red"></div>
+      <div class="bg-glow bg-glow--cyan"></div>
+      <div class="scanlines"></div>
+      <div class="noise"></div>
+    </div>
+
+    <header class="topbar" id="topbar">
+      <button class="icon-btn menu-btn" data-action="toggle-sidebar" aria-label="Меню" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <a class="brand" href="#/home" aria-label="DATA POOL RED — на главную">
+        <span class="brand__mark">DP</span>
+        <span class="brand__text">
+          <strong>DATA&nbsp;POOL</strong>
+          <em>// RED</em>
+        </span>
+      </a>
+
+      <button class="search-trigger" data-action="open-search" aria-label="Глобальный поиск">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <span>Найти оружие, имплант, правило…</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+
+      <div class="topbar__actions">
+        <button class="icon-btn show-sm" data-action="open-search" title="Поиск" aria-label="Поиск">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <button class="btn btn--ghost btn--sm hide-sm" data-action="open-dice" title="Броски кубиков">
+          <span class="mono">d10</span> Броски
+        </button>
+        <button class="btn btn--yellow btn--sm" data-action="quick-job" title="Сгенерировать работу">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+          Работа
+        </button>
+        <button class="icon-btn hide-sm" data-action="print" title="Печать / PDF" aria-label="Печать">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar" aria-label="Навигация">
+      <nav class="nav" id="nav"></nav>
+      <div class="sidebar__foot">
+        <div class="sidebar__meta">
+          <span class="dot dot--live"></span> <span class="mono">v1.4.2</span> · офлайн-сборка
+        </div>
+        <div class="sidebar__meta sidebar__meta--dim">
+          Неофициальный фан-материал. Cyberpunk RED © R. Talsorian Games.
+        </div>
+      </div>
+    </aside>
+
+    <main class="main" id="main" tabindex="-1">
+      <div class="route-loading" id="route-loading"><span class="mono">ЗАГРУЗКА ДАННЫХ…</span></div>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div><b>DATA POOL // RED</b> — <span class="dim">энциклопедия и генераторы для Cyberpunk RED</span></div>
+      <div class="footer__right">
+        <a href="https://alec-leon.github.io/data-pool/" target="_blank" rel="noopener">Data Pool</a>
+        <span class="dot"></span>
+        <a href="#/my">Мои материалы</a>
+        <span class="dot"></span>
+        <button class="link-btn" data-action="open-about">О сборке</button>
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-root" id="modal-root"></div>
+
+  <script src="data/core.js?v=1.4.2"></script>
+  <script src="data/lore.js?v=1.4.2"></script>
+  <script src="data/map.js?v=1.4.2"></script>
+  <script src="data/roles.js?v=1.4.2"></script>
+  <script src="data/adventure.js?v=1.4.2"></script>
+  <script src="data/arsenal.js?v=1.4.2"></script>
+  <script src="data/cyberware.js?v=1.4.2"></script>
+  <script src="data/equipment.js?v=1.4.2"></script>
+  <script src="data/generators.js?v=1.4.2"></script>
+  <script src="data/library.js?v=1.4.2"></script>
+  <script src="assets/js/app.js?v=1.4.2"></script>
+  <script src="assets/js/pages-city.js?v=1.4.2"></script>
+  <script src="assets/js/pages-map.js?v=1.4.2"></script>
+  <script src="assets/js/pages-arsenal.js?v=1.4.2"></script>
+  <script src="assets/js/pages-equipment.js?v=1.4.2"></script>
+  <script src="assets/js/pages-generators.js?v=1.4.2"></script>
+</body>
+</html>
